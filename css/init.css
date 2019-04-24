@@ -1,0 +1,45 @@
+.it-init {
+	border-radius: 2px;
+	display:block;
+	list-style: none;
+	margin: 4px;
+	width: 400px;
+}
+
+.it-init-text {
+	float: left;
+	margin: 2px;
+}
+
+.it-init-value {
+	border-radius: 2px;
+	float: right;
+	height: 20px;
+	margin: 14px 2px 2px 2px;
+	width: 30px;
+}
+
+.it-init-ch {
+	display: inline-block;
+	padding: 2px 0px 0px 0px;
+}
+
+.it-init-chit {
+	display: inline-block;
+	text-align: center;
+}
+
+.it-init-name {
+	display: inline-block;
+	font-size: 34px;
+	width: 240px;
+}
+
+.it-init-chit label {
+	margin: 0;
+}
+
+.it-init-action {
+	display: block;
+	font-size: 10px;
+}

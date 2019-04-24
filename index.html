@@ -1,0 +1,62 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" href="css/init.css" />
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="container-fluid" id="app-4">
+	<ul>
+		<li class="border border-dark text-monospace it-init" v-for="init in sortedInits">
+			<span class="text-dark it-init-name">{{ init.name }}</span>
+			<span class="badge badge-dark it-init-value">{{ init.initiative }}</span>
+			<span class="it-init-ch">
+				<span class="it-init-chit"><input type="checkbox" /><label class="it-init-action">Action</label></span>
+				<span class="it-init-chit"><input type="checkbox" /><label class="it-init-action">Ready</label></span>
+				<span class="it-init-chit"><input type="checkbox" /><label class="it-init-action">Delay</label></span>
+			</span>
+		</li>
+	</ul>
+</div>
+<script>
+	var app4 = new Vue({
+		el : '#app-4',
+		data : {
+			inits : [ {
+				name : 'Player 1',
+				initiative : 10
+			}, {
+				name : 'Player 2',
+				initiative : 12
+			}, {
+				name : 'Player 3',
+				initiative : 14
+			}, {
+				name : 'Player 4',
+				initiative : 8
+			}, {
+				name : 'Player 5',
+				initiative : 6
+			}, {
+				name : 'Player 6',
+				initiative : 4
+			} ]
+		},
+		computed : {
+			sortedInits : function() {
+				function compare(a, b) {
+					if (a.initiative < b.initiative)
+						return 1;
+					if (a.initiative > b.initiative)
+						return -1;
+					return 0;
+				}
+
+				return this.inits.sort(compare);
+			}
+		}
+	})
+</script>
+</body>
+</html>
